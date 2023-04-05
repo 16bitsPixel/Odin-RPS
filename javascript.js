@@ -63,3 +63,19 @@ function playRound(playerSelection, computerSelection) {
     }
     return outcome;
 }
+
+/*
+    Function plays 5 rounds of RPS
+    Parameters: None
+    Output: Results of 5 games of RPS
+*/
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Choose: Rock, Paper, or Scissors!");
+        let computerSelection = getComputerChoice();
+
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+game();
