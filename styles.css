@@ -1,0 +1,18 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 2000px;
+}
+
+.btn {
+    height: 250px;
+    width: 250px;
+    border-color: black;
+    border-radius: 1px;
+}

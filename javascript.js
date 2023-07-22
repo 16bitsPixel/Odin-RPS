@@ -70,12 +70,18 @@ function playRound(playerSelection, computerSelection) {
     Output: Results of 5 games of RPS
 */
 function game() {
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Choose: Rock, Paper, or Scissors!");
-        let computerSelection = getComputerChoice();
+    let playerSelection = prompt("Choose: Rock, Paper, or Scissors!");
+    let computerSelection = getComputerChoice();
 
-        console.log(playRound(playerSelection, computerSelection));
-    }
+    console.log(playRound(playerSelection, computerSelection));
 }
+
+// adding event listeners to the buttons
+const buttons = document.querySelectorAll(".btn");
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        alert("test");
+    });
+});
 
 game();
