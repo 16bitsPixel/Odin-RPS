@@ -8,19 +8,37 @@
     <link rel = "stylesheet" href = "./styles.css">
     <script src = "javascript.js" defer></script>
 </head>
+
+<header>
+    <h1>Rock Paper Scissors</h1>
+</header>
+
 <body>
     <div class = "content">
-        <h1>Rock Paper Scissors</h1>
+        <h2>Score: 0 - 0</h2>
 
-        <h2>Score</h2>
+        <h3>Please select an option:</h2>
 
         <div class = "buttons">
-            <button class = "btn" id = "rock"><img src = "./images/rps rock.png" alt = "rock"></button>
-            <button class = "btn" id = "paper"><img src = "./images/rps paper.png" alt = "paper"></button>
-            <button class = "btn" id = "scissors"><img src = "./images/rps scissors.png" alt = "scissors"></button>
+            <div class = "choice">
+                <button class = "btn" id = "rock"><img src = "./images/rps rock.png" alt = "rock"></button>
+                <p>ROCK</p>
+            </div>
+            <div class = "choice">
+                <button class = "btn" id = "paper"><img src = "./images/rps paper.png" alt = "paper"></button>
+                <p>PAPER</p>
+            </div>
+            <div class = "choice">
+                <button class = "btn" id = "scissors"><img src = "./images/rps scissors.png" alt = "scissors"></button>
+                <p>SCISSORS</p>
+            </div>
         </div>
 
-        <button class = "btn" id = "confirm">Confirm</button>
+        <button class = "btn" id = "confirm">CONFIRM</button>
     </div>
 </body>
+
+<footer>
+    <p>Copyright © The Odin Project</p>
+</footer>
 </html>

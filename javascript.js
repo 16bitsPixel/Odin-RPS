@@ -96,7 +96,9 @@ buttons.forEach(button => {
                 computerScore++;
             }
 
-            console.log("Score " + playerScore + " - " + computerScore);
+            // update the visual score
+            let scoreVisual = document.querySelector("h2");
+            scoreVisual.textContent = "Score: " + playerScore + " - " + computerScore;
 
             // if either players reach 5 points, game ends
             if (playerScore == 5) {

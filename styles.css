@@ -1,24 +1,90 @@
+* {
+    font-family: 'Roboto', 'sans-serif';
+}
+
+header {
+    background-color: #071228;
+    color: white;
+    font-size: 50px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+header > h1 {
+    flex-shrink: 0;
+}
+
+body {
+    background-color: #162B49;
+    margin: 0;
+}
+
 .content {
+    background-color: #162B49;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 25px;
+}
+
+.content > h2 {
+    font-size: 80px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    flex-shrink: 0;
+}
+
+.content > h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 100px;
     width: 2000px;
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .btn {
     height: 250px;
     width: 250px;
+    background-color:#162B49;
     border-color: black;
     border-radius: 1px;
 }
 
 #confirm {
+    background-color: #3A73A8;
+    color: white;
+    font-weight: bolder;
+    font-size: 24px;
     margin-top: 50px;
-    height: 100px;
+    height: 80px;
     width: 150px;
+}
+
+footer {
+    background-color: #00699E;
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
