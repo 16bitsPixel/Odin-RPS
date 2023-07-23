@@ -16,3 +16,9 @@
     border-color: black;
     border-radius: 1px;
 }
+
+#confirm {
+    margin-top: 50px;
+    height: 100px;
+    width: 150px;
+}
