@@ -22,39 +22,48 @@ function playRound(playerSelection, computerSelection) {
         case "rock":
             switch(computerSelection.toLowerCase()) {
                 case "rock":
-                    outcome = "Nobody wins! Both chose Rock!";
+                    console.log("Nobody wins! Both chose Rock!");
+                    outcome = "tie";
                     break;
                 case "paper":
-                    outcome = "You lose! Paper beats Rock!";
+                    console.log("You lose! Paper beats Rock!");
+                    outcome = "player";
                     break;
                 case "scissors":
-                    outcome = "You win! Rock beats Paper!";
+                    console.log("You win! Rock beats Paper!");
+                    outcome = "computer";
                     break;
             }
             break;
         case "paper":
             switch(computerSelection.toLowerCase()) {
                 case "rock":
-                    outcome = "You win! Paper beats Rock!";
+                    console.log("You win! Paper beats Rock!");
+                    outcome = "player";
                     break;
                 case "paper":
-                    outcome = "Nobody wins! Both chose Paper!";
+                    console.log("Nobody wins! Both chose Paper!");
+                    outcome = "tie";
                     break;
                 case "scissors":
-                    outcome = "You lose! Scissor beats Paper!";
+                    console.log("You lose! Scissor beats Paper!");
+                    outcome = "computer";
                     break;
             }
             break;
         case "scissors":
             switch(computerSelection.toLowerCase()) {
                 case "rock":
-                    outcome = "You lose! Rock beats Scissors!";
+                    console.log("You lose! Rock beats Scissors!");
+                    outcome = "computer";
                     break;
                 case "paper":
-                    outcome = "You win! Scissors beats Paper!";
+                    console.log("You win! Scissors beats Paper!");
+                    outcome = "player";
                     break;
                 case "scissors":
-                    outcome = "Nobody wins! Both chose Scissors!";
+                    console.log("Nobody wins! Both chose Scissors!");
+                    outcome = "tie";
                     break;
             }
             break;
@@ -64,24 +73,46 @@ function playRound(playerSelection, computerSelection) {
     return outcome;
 }
 
-/*
-    Function plays 5 rounds of RPS
-    Parameters: None
-    Output: Results of 5 games of RPS
-*/
-function game() {
-    let playerSelection = prompt("Choose: Rock, Paper, or Scissors!");
-    let computerSelection = getComputerChoice();
-
-    console.log(playRound(playerSelection, computerSelection));
-}
+// variables for score and selection
+let playerSelection;
+let playerScore = 0, computerScore = 0;
 
 // adding event listeners to the buttons
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        alert("test");
+        // player hits confirm choice
+        if (button.id == "confirm") {
+            // edge case nothing selected
+            if (playerSelection == undefined) return;
+
+            let outcome = playRound(playerSelection, getComputerChoice());
+            
+            // update scores
+            if (outcome == "player") {
+                playerScore++;
+            }
+            else if (outcome == "computer") {
+                computerScore++;
+            }
+
+            console.log("Score " + playerScore + " - " + computerScore);
+
+            // if either players reach 5 points, game ends
+            if (playerScore == 5) {
+                console.log("GAME OVER: PLAYER WINS!");
+                playerScore = 0; computerScore = 0;
+            }
+            else if (computerScore == 5) {
+                console.log("GAME OVER: COMPUTER WINS!");
+                playerScore = 0; computerScore = 0;
+            }
+
+            playerSelection = undefined;
+        }
+        // player selects an option
+        else {
+            playerSelection = button.id;
+        }
     });
 });
-
-game();
