@@ -133,7 +133,7 @@ buttons.forEach(button => {
             playerSelection = undefined;
             setTimeout(function() {
                 buttons.forEach(btn => {btn.classList.remove("playing"); btn.classList.remove("enemy"); btn.classList.remove("tied");});
-            }, 1000);
+            }, 500);
         }
         // restarting game
         else if (button.textContent == "Restart?") {
@@ -145,7 +145,7 @@ buttons.forEach(button => {
 
             // reset variables + button highlights
             playerSelection = undefined;
-            buttons.forEach(btn => {btn.classList.remove("playing");});
+            buttons.forEach(btn => {btn.classList.remove("playing"); btn.classList.remove("enemy"); btn.classList.remove("tied");});
 
             // play reset audio
             audio = new Audio("./sounds/restart.wav");
