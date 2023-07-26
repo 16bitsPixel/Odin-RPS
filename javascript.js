@@ -30,12 +30,12 @@ function playRound(playerSelection, computerSelection) {
                 case "paper":
                     document.querySelector("#paper").classList.add("enemy");
                     resultVisual.textContent = "You lose! Paper beats Rock!";
-                    outcome = "player";
+                    outcome = "computer";
                     break;
                 case "scissors":
                     document.querySelector("#scissors").classList.add("enemy");
                     resultVisual.textContent = "You win! Rock beats Scissors!";
-                    outcome = "computer";
+                    outcome = "player";
                     break;
             }
             break;
