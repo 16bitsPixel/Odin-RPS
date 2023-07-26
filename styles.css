@@ -84,6 +84,12 @@ body {
     box-shadow: 0 0 1rem #ff0000;
 }
 
+.tied {
+    transform: scale(1.1);
+    border-color: #ae00ff;
+    box-shadow: 0 0 1rem #ae00ff;
+}
+
 #confirm {
     background-color: #3A73A8;
     color: white;
