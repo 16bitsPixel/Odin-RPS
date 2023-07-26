@@ -23,15 +23,18 @@ function playRound(playerSelection, computerSelection) {
         case "rock":
             switch(computerSelection.toLowerCase()) {
                 case "rock":
+                    document.querySelector("#rock").classList.add("tied");
                     resultVisual.textContent = "Nobody wins! Both chose Rock!";
                     outcome = "tie";
                     break;
                 case "paper":
+                    document.querySelector("#paper").classList.add("enemy");
                     resultVisual.textContent = "You lose! Paper beats Rock!";
                     outcome = "player";
                     break;
                 case "scissors":
-                    resultVisual.textContent = "You win! Rock beats Paper!";
+                    document.querySelector("#scissors").classList.add("enemy");
+                    resultVisual.textContent = "You win! Rock beats Scissors!";
                     outcome = "computer";
                     break;
             }
@@ -39,14 +42,17 @@ function playRound(playerSelection, computerSelection) {
         case "paper":
             switch(computerSelection.toLowerCase()) {
                 case "rock":
+                    document.querySelector("#rock").classList.add("enemy");
                     resultVisual.textContent = "You win! Paper beats Rock!";
                     outcome = "player";
                     break;
                 case "paper":
+                    document.querySelector("#paper").classList.add("tied");
                     resultVisual.textContent = "Nobody wins! Both chose Paper!";
                     outcome = "tie";
                     break;
                 case "scissors":
+                    document.querySelector("#scissors").classList.add("enemy");
                     resultVisual.textContent = "You lose! Scissor beats Paper!";
                     outcome = "computer";
                     break;
@@ -55,14 +61,17 @@ function playRound(playerSelection, computerSelection) {
         case "scissors":
             switch(computerSelection.toLowerCase()) {
                 case "rock":
+                    document.querySelector("#rock").classList.add("enemy");
                     resultVisual.textContent = "You lose! Rock beats Scissors!";
                     outcome = "computer";
                     break;
                 case "paper":
+                    document.querySelector("#paper").classList.add("enemy");
                     resultVisual.textContent = "You win! Scissors beats Paper!";
                     outcome = "player";
                     break;
                 case "scissors":
+                    document.querySelector("#scissors").classList.add("tied");
                     resultVisual.textContent = "Nobody wins! Both chose Scissors!";
                     outcome = "tie";
                     break;
@@ -120,8 +129,11 @@ buttons.forEach(button => {
                 document.querySelector("#confirm").textContent = "Restart?";
             }
 
+            // wait a couple of seconds before removing colors
             playerSelection = undefined;
-            buttons.forEach(btn => {btn.classList.remove("playing");});
+            setTimeout(function() {
+                buttons.forEach(btn => {btn.classList.remove("playing"); btn.classList.remove("enemy"); btn.classList.remove("tied");});
+            }, 1000);
         }
         // restarting game
         else if (button.textContent == "Restart?") {
