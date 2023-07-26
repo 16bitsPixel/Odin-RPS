@@ -34,13 +34,19 @@ body {
 .content > h2 {
     font-size: 80px;
     margin-top: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 10px;
     flex-shrink: 0;
 }
 
 .content > h3 {
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.content > h4 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .buttons {
@@ -64,6 +70,18 @@ body {
     background-color:#162B49;
     border-color: black;
     border-radius: 1px;
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: #00ffff;
+    box-shadow: 0 0 1rem #00ffff;
+}
+
+.enemy {
+    transform: scale(1.1);
+    border-color: #ff0000;
+    box-shadow: 0 0 1rem #ff0000;
 }
 
 #confirm {

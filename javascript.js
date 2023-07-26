@@ -18,19 +18,20 @@ function getComputerChoice() {
 */
 function playRound(playerSelection, computerSelection) {
     let outcome;
+    let resultVisual = document.querySelector("h3");
     switch(playerSelection.toLowerCase()) {
         case "rock":
             switch(computerSelection.toLowerCase()) {
                 case "rock":
-                    console.log("Nobody wins! Both chose Rock!");
+                    resultVisual.textContent = "Nobody wins! Both chose Rock!";
                     outcome = "tie";
                     break;
                 case "paper":
-                    console.log("You lose! Paper beats Rock!");
+                    resultVisual.textContent = "You lose! Paper beats Rock!";
                     outcome = "player";
                     break;
                 case "scissors":
-                    console.log("You win! Rock beats Paper!");
+                    resultVisual.textContent = "You win! Rock beats Paper!";
                     outcome = "computer";
                     break;
             }
@@ -38,15 +39,15 @@ function playRound(playerSelection, computerSelection) {
         case "paper":
             switch(computerSelection.toLowerCase()) {
                 case "rock":
-                    console.log("You win! Paper beats Rock!");
+                    resultVisual.textContent = "You win! Paper beats Rock!";
                     outcome = "player";
                     break;
                 case "paper":
-                    console.log("Nobody wins! Both chose Paper!");
+                    resultVisual.textContent = "Nobody wins! Both chose Paper!";
                     outcome = "tie";
                     break;
                 case "scissors":
-                    console.log("You lose! Scissor beats Paper!");
+                    resultVisual.textContent = "You lose! Scissor beats Paper!";
                     outcome = "computer";
                     break;
             }
@@ -54,15 +55,15 @@ function playRound(playerSelection, computerSelection) {
         case "scissors":
             switch(computerSelection.toLowerCase()) {
                 case "rock":
-                    console.log("You lose! Rock beats Scissors!");
+                    resultVisual.textContent = "You lose! Rock beats Scissors!";
                     outcome = "computer";
                     break;
                 case "paper":
-                    console.log("You win! Scissors beats Paper!");
+                    resultVisual.textContent = "You win! Scissors beats Paper!";
                     outcome = "player";
                     break;
                 case "scissors":
-                    console.log("Nobody wins! Both chose Scissors!");
+                    resultVisual.textContent = "Nobody wins! Both chose Scissors!";
                     outcome = "tie";
                     break;
             }
@@ -76,15 +77,21 @@ function playRound(playerSelection, computerSelection) {
 // variables for score and selection
 let playerSelection;
 let playerScore = 0, computerScore = 0;
+let audio;
 
 // adding event listeners to the buttons
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         // player hits confirm choice
-        if (button.id == "confirm") {
+        if (button.id == "confirm" && button.textContent != "Restart?") {
+            console.log(button.textContent);
             // edge case nothing selected
             if (playerSelection == undefined) return;
+
+            audio = new Audio("./sounds/confirm.wav");
+            audio.currentTime = 0;
+            audio.play();
 
             let outcome = playRound(playerSelection, getComputerChoice());
             
@@ -101,20 +108,56 @@ buttons.forEach(button => {
             scoreVisual.textContent = "Score: " + playerScore + " - " + computerScore;
 
             // if either players reach 5 points, game ends
+            let resultVisual = document.querySelector("h3");
             if (playerScore == 5) {
-                console.log("GAME OVER: PLAYER WINS!");
+                resultVisual.textContent = "GAME OVER: PLAYER WINS!";
                 playerScore = 0; computerScore = 0;
+                document.querySelector("#confirm").textContent = "Restart?";
             }
             else if (computerScore == 5) {
-                console.log("GAME OVER: COMPUTER WINS!");
+                resultVisual.textContent = "GAME OVER: COMPUTER WINS!";
                 playerScore = 0; computerScore = 0;
+                document.querySelector("#confirm").textContent = "Restart?";
             }
 
             playerSelection = undefined;
+            buttons.forEach(btn => {btn.classList.remove("playing");});
+        }
+        // restarting game
+        else if (button.textContent == "Restart?") {
+            // text contents
+            button.textContent = "CONFIRM";
+            let scoreVisual = document.querySelector("h2");
+            scoreVisual.textContent = "Score: " + 0 + " - " + 0;
+            document.querySelector("h3").textContent = "First To 5 Wins!";
+
+            // reset variables + button highlights
+            playerSelection = undefined;
+            buttons.forEach(btn => {btn.classList.remove("playing");});
+
+            // play reset audio
+            audio = new Audio("./sounds/restart.wav");
+            audio.currentTime = 0;
+            audio.play();
         }
         // player selects an option
         else {
+            buttons.forEach(btn => {btn.classList.remove("playing");});
+            button.classList.add("playing");
             playerSelection = button.id;
+
+            // play appropriate sound
+            if (button.id == "rock") {
+                audio = new Audio("./sounds/rock.wav");
+            }
+            else if (button.id == "paper") {
+                audio = new Audio("./sounds/paper.wav");
+            }
+            else if (button.id == "scissors") {
+                audio = new Audio("./sounds/scissors.wav");
+            }
+            audio.currentTime = 0;
+            audio.play();
         }
     });
 });
