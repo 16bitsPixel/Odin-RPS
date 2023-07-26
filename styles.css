@@ -13,10 +13,6 @@ header {
     margin: 0;
 }
 
-header > h1 {
-    flex-shrink: 0;
-}
-
 body {
     background-color: #162B49;
     margin: 0;
@@ -35,7 +31,6 @@ body {
     font-size: 80px;
     margin-top: 20px;
     margin-bottom: 10px;
-    flex-shrink: 0;
 }
 
 .content > h3 {
@@ -53,7 +48,6 @@ body {
     display: flex;
     justify-content: center;
     gap: 100px;
-    width: 2000px;
 }
 
 .choice {
