@@ -5,7 +5,7 @@
 header {
     background-color: #071228;
     color: white;
-    font-size: 2vw;
+    font-size: 2vh;
     max-height: 15vh;
     display: flex;
     justify-content: center;
@@ -28,19 +28,19 @@ body {
 }
 
 .content > h2 {
-    font-size: 3vw;
+    font-size: 3vh;
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
 
 .content > h3 {
-    font-size: 1.5vw;
+    font-size: 1.5vh;
     margin-top: 0px;
     margin-bottom: 2vh;
 }
 
 .content > h4 {
-    font-size: 1vw;
+    font-size: 1vh;
     margin-bottom: 2vh;
 }
 
@@ -54,13 +54,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1vw;
+    font-size: 1vh;
     font-weight: bold;
 }
 
 .btn {
     height: 25vh;
-    width: 12vw;
+    width: auto;
     background-color:#162B49;
     border-color: black;
     border-radius: 1px;
@@ -68,7 +68,7 @@ body {
 
 .btn > img {
     height: 20vh;
-    width: 10vw;
+    width: auto;
 }
 
 .playing {
@@ -93,7 +93,7 @@ body {
     background-color: #3A73A8;
     color: white;
     font-weight: bolder;
-    font-size: 1vw;
+    font-size: 1vh;
     margin-top: 4vh;
     height: 7vh;
     width: 7vw;
@@ -102,7 +102,7 @@ body {
 footer {
     background-color: #00699E;
     color: white;
-    font-size: 0.8vw;
+    font-size: 0.8vh;
     font-weight: bolder;
     display: flex;
     justify-content: center;
