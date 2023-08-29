@@ -5,8 +5,8 @@
 header {
     background-color: #071228;
     color: white;
-    font-size: 4.5rem;
-    height: 15vh;
+    font-size: 2vw;
+    max-height: 15vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,37 +24,37 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1.8rem;
+    margin-top: 1vh;
 }
 
 .content > h2 {
-    font-size: 4.3rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.8rem;
+    font-size: 3vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
 .content > h3 {
-    font-size: 2rem;
+    font-size: 1.5vw;
     margin-top: 0px;
-    margin-bottom: 2rem;
+    margin-bottom: 2vh;
 }
 
 .content > h4 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1vw;
+    margin-bottom: 2vh;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 5rem;
+    gap: 3vw;
 }
 
 .choice {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1vw;
     font-weight: bold;
 }
 
@@ -64,6 +64,11 @@ body {
     background-color:#162B49;
     border-color: black;
     border-radius: 1px;
+}
+
+.btn > img {
+    height: 20vh;
+    width: 10vw;
 }
 
 .playing {
@@ -88,16 +93,16 @@ body {
     background-color: #3A73A8;
     color: white;
     font-weight: bolder;
-    font-size: 1.3rem;
-    margin-top: 4rem;
-    height: 8vh;
-    width: 8vw;
+    font-size: 1vw;
+    margin-top: 4vh;
+    height: 7vh;
+    width: 7vw;
 }
 
 footer {
     background-color: #00699E;
     color: white;
-    font-size: 1rem;
+    font-size: 0.8vw;
     font-weight: bolder;
     display: flex;
     justify-content: center;
