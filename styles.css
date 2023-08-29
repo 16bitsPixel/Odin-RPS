@@ -23,24 +23,25 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-top: 1vh;
 }
 
 .content > h2 {
-    font-size: 3vh;
+    font-size: 6vh;
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
 
 .content > h3 {
-    font-size: 1.5vh;
+    font-size: 3vh;
     margin-top: 0px;
     margin-bottom: 2vh;
 }
 
 .content > h4 {
-    font-size: 1vh;
+    font-size: 2.5vh;
     margin-bottom: 2vh;
 }
 
@@ -54,7 +55,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1vh;
+    font-size: 2vh;
     font-weight: bold;
 }
 
@@ -93,16 +94,16 @@ body {
     background-color: #3A73A8;
     color: white;
     font-weight: bolder;
-    font-size: 1vh;
-    margin-top: 4vh;
+    font-size: 2vw;
+    margin-top: 1.5vh;
     height: 7vh;
-    width: 7vw;
+    width: 14vw;
 }
 
 footer {
     background-color: #00699E;
     color: white;
-    font-size: 0.8vh;
+    font-size: 1vh;
     font-weight: bolder;
     display: flex;
     justify-content: center;
