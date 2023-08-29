@@ -59,16 +59,16 @@ body {
 }
 
 .btn {
-    height: 25vh;
-    width: auto;
+    height: 25vw;
+    width: 25vw;
     background-color:#162B49;
     border-color: black;
     border-radius: 1px;
 }
 
 .btn > img {
-    height: 20vh;
-    width: auto;
+    width: 20vw;
+    height: 20vw;
 }
 
 .playing {
